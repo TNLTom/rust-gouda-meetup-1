@@ -59,7 +59,7 @@ highlight "Installing" "Rust stdlib sources"
 rustup component add rust-src
 
 # STEP 4: Installing the GNU Arm Embedded Toolchain
-export PATH=$PATH:"$HOME/.armtoolchain/gcc-arm-none-eabi-7-2017-q4-major/bin/"
+export PATH="${HOME}/.armtoolchain/gcc-arm-none-eabi-7-2017-q4-major/bin/:${PATH}"
 EXISTING_ARM_LOC=`command -v arm-none-eabi-ld`
 
 if [ "" != "$EXISTING_ARM_LOC" ]
@@ -103,7 +103,7 @@ highlight "" "Script is done, now YOU need to do some work!\n"
 highlight "Add rustup and cargo to your PATH,"
 highlight "" "so run in you shell:" "\tsource ~/.cargo/env"
 highlight "Add ARM toolchain to you PATH if it was installed by this script, so run in you shell:"
-highlight "" "\texport PATH=\$PATH:$HOME/.armtoolchain/gcc-arm-none-eabi-7-2017-q4-major/bin"
+highlight "" "\texport PATH=$HOME/.armtoolchain/gcc-arm-none-eabi-7-2017-q4-major/bin:\$PATH"
 
 printf "\n"
 highlight "And yes, it is a smart move to put this stuff in your" ".profile"
